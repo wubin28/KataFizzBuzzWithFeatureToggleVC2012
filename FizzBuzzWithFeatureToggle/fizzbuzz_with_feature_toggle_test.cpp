@@ -39,6 +39,13 @@ TEST_F(FizzBuzzWithFeatureToggleTest, WhenCommonNumberThenSayItDirectly) {
 	EXPECT_EQ("98", fizzBuzzHandler.handle(98));
 }
 
+TEST_F(FizzBuzzWithFeatureToggleTest, WhenMultipleOf3ThenFizz) {
+	FizzBuzzHandler fizzBuzzHandler;
+	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(3));
+	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(51));
+	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(99));
+}
+
 }  // namespace
 
 
