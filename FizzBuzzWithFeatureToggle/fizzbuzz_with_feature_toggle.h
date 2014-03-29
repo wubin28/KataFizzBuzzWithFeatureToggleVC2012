@@ -6,6 +6,7 @@
 using std::string;
 
 class BodyMovement {
+public:
     virtual string respond(int number) = 0;
 };
 
