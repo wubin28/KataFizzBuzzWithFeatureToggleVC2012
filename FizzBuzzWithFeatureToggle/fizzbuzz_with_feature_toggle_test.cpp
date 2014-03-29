@@ -32,9 +32,11 @@ protected:
 	// Objects declared here can be used by all tests in the test case for FizzBuzzWithFeatureToggle.
 };
 
-TEST_F(FizzBuzzWithFeatureToggleTest, When1Then1) {
+TEST_F(FizzBuzzWithFeatureToggleTest, WhenCommonNumberThenSayItDirectly) {
 	FizzBuzzHandler fizzBuzzHandler;
 	EXPECT_EQ("1", fizzBuzzHandler.handle(1));
+	EXPECT_EQ("49", fizzBuzzHandler.handle(49));
+	EXPECT_EQ("98", fizzBuzzHandler.handle(98));
 }
 
 }  // namespace
