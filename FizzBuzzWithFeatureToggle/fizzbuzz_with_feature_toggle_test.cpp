@@ -34,6 +34,11 @@ protected:
 
 TEST_F(FizzBuzzWithFeatureToggleTest, WhenCommonNumberThenSayItDirectly) {
 	FizzBuzzHandler fizzBuzzHandler;
+    fizzBuzzHandler.turnBodyMovementFeatureOff();
+	EXPECT_EQ("1", fizzBuzzHandler.handle(1));
+	EXPECT_EQ("49", fizzBuzzHandler.handle(49));
+	EXPECT_EQ("98", fizzBuzzHandler.handle(98));
+    fizzBuzzHandler.turnBodyMovementFeatureOn();
 	EXPECT_EQ("1", fizzBuzzHandler.handle(1));
 	EXPECT_EQ("49", fizzBuzzHandler.handle(49));
 	EXPECT_EQ("98", fizzBuzzHandler.handle(98));
@@ -41,6 +46,7 @@ TEST_F(FizzBuzzWithFeatureToggleTest, WhenCommonNumberThenSayItDirectly) {
 
 TEST_F(FizzBuzzWithFeatureToggleTest, WhenMultipleOf3ThenFizz) {
 	FizzBuzzHandler fizzBuzzHandler;
+    fizzBuzzHandler.turnBodyMovementFeatureOff();
 	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(3));
 	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(51));
 	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(99));
@@ -48,6 +54,7 @@ TEST_F(FizzBuzzWithFeatureToggleTest, WhenMultipleOf3ThenFizz) {
 
 TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOnWhenMultipleOf3ThenFizzAndTouchHead) {
 	FizzBuzzHandler fizzBuzzHandler;
+    fizzBuzzHandler.turnBodyMovementFeatureOn();
 	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(3));
 	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(51));
 	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(99));
