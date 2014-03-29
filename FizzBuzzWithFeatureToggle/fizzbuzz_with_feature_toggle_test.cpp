@@ -33,31 +33,28 @@ protected:
 };
 
 TEST_F(FizzBuzzWithFeatureToggleTest, WhenCommonNumberThenSayItDirectly) {
-	FizzBuzzHandler fizzBuzzHandler;
-    fizzBuzzHandler.turnBodyMovementFeatureOff();
-	EXPECT_EQ("1", fizzBuzzHandler.handle(1));
-	EXPECT_EQ("49", fizzBuzzHandler.handle(49));
-	EXPECT_EQ("98", fizzBuzzHandler.handle(98));
-    fizzBuzzHandler.turnBodyMovementFeatureOn();
-	EXPECT_EQ("1", fizzBuzzHandler.handle(1));
-	EXPECT_EQ("49", fizzBuzzHandler.handle(49));
-	EXPECT_EQ("98", fizzBuzzHandler.handle(98));
+    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOff);
+	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
+	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
+	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
+    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
+	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
+	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
+	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
 }
 
 TEST_F(FizzBuzzWithFeatureToggleTest, WhenMultipleOf3ThenFizz) {
-	FizzBuzzHandler fizzBuzzHandler;
-    fizzBuzzHandler.turnBodyMovementFeatureOff();
-	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(3));
-	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(51));
-	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(99));
+    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOff);
+	EXPECT_EQ("Fizz", ptrFizzBuzzHandler->handle(3));
+	EXPECT_EQ("Fizz", ptrFizzBuzzHandler->handle(51));
+	EXPECT_EQ("Fizz", ptrFizzBuzzHandler->handle(99));
 }
 
 TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOnWhenMultipleOf3ThenFizzAndTouchHead) {
-	FizzBuzzHandler fizzBuzzHandler;
-    fizzBuzzHandler.turnBodyMovementFeatureOn();
-	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(3));
-	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(51));
-	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(99));
+    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
+	EXPECT_EQ("FizzAndTouchHead", ptrFizzBuzzHandler->handle(3));
+	EXPECT_EQ("FizzAndTouchHead", ptrFizzBuzzHandler->handle(51));
+	EXPECT_EQ("FizzAndTouchHead", ptrFizzBuzzHandler->handle(99));
 }
 
 }  // namespace
