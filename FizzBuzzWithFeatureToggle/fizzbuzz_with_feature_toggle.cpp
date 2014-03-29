@@ -6,3 +6,11 @@ string FizzBuzzHandler::handle(int number) {
     }
 	return std::to_string(number);
 }
+
+void FizzBuzzHandler::turnBodyMovementFeatureOn() {
+    isBodyMovementFeatureOn = 1;
+}
+
+void FizzBuzzHandler::turnBodyMovementFeatureOff() {
+    isBodyMovementFeatureOn = 0;
+}
