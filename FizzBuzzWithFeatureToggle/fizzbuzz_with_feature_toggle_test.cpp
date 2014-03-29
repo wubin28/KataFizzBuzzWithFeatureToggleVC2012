@@ -46,6 +46,13 @@ TEST_F(FizzBuzzWithFeatureToggleTest, WhenMultipleOf3ThenFizz) {
 	EXPECT_EQ("Fizz", fizzBuzzHandler.handle(99));
 }
 
+TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOnWhenMultipleOf3ThenFizzAndTouchHead) {
+	FizzBuzzHandler fizzBuzzHandler;
+	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(3));
+	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(51));
+	EXPECT_EQ("FizzAndTouchHead", fizzBuzzHandler.handle(99));
+}
+
 }  // namespace
 
 
