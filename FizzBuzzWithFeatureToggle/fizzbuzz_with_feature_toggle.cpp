@@ -17,3 +17,21 @@ void FizzBuzzHandler::turnBodyMovementFeatureOn() {
 void FizzBuzzHandler::turnBodyMovementFeatureOff() {
     isBodyMovementFeatureOn = 0;
 }
+
+FizzBuzzHandler::FizzBuzzHandler(BodyMovement *ptrBodyMovement) {
+    this->ptrBodyMovement = ptrBodyMovement;
+}
+
+string BodyMovementOff::respond(int number) {
+    if (number % 3 == 0) {
+        return "Fizz";
+    }
+    return std::to_string(number);
+}
+
+string BodyMovementOn::respond(int number) {
+    if (number % 3 == 0) {
+        return "FizzAndTouchHead";
+    }
+    return std::to_string(number);
+}

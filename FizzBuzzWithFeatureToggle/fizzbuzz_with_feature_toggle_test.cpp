@@ -37,7 +37,7 @@ TEST_F(FizzBuzzWithFeatureToggleTest, WhenCommonNumberThenSayItDirectly) {
 	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
 	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
 	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
-    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
+    ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
 	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
 	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
 	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
