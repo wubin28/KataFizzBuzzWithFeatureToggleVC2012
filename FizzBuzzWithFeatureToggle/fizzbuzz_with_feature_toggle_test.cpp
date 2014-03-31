@@ -16,6 +16,8 @@ protected:
 
 	virtual ~FizzBuzzWithFeatureToggleTest() {
 	// You can do clean-up work that doesn't throw exceptions here.
+        delete this->ptrFizzBuzzHandler;
+        this->ptrFizzBuzzHandler = NULL;
 	}
 
 	// If the constructor and destructor are not enough for setting up
