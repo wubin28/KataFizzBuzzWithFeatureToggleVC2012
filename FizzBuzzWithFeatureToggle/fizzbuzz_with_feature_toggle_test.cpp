@@ -8,6 +8,8 @@ protected:
 	// You can remove any or all of the following functions if its body
 	// is empty.
 
+    FizzBuzzHandler *ptrFizzBuzzHandler;
+
 	FizzBuzzWithFeatureToggleTest() {
 	// You can do set-up work for each test here.
 	}
@@ -33,28 +35,28 @@ protected:
 };
 
 TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOffWhenCommonNumberThenSayItDirectly) {
-    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOff);
+    ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOff);
 	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
 	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
 	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
 }
 
 TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOnWhenCommonNumberThenSayItDirectly) {
-    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
+    ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
 	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
 	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
 	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
 }
 
 TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOffWhenMultipleOf3ThenFizz) {
-    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOff);
+    ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOff);
 	EXPECT_EQ("Fizz", ptrFizzBuzzHandler->handle(3));
 	EXPECT_EQ("Fizz", ptrFizzBuzzHandler->handle(51));
 	EXPECT_EQ("Fizz", ptrFizzBuzzHandler->handle(99));
 }
 
 TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOnWhenMultipleOf3ThenFizzAndTouchHead) {
-    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
+    ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
 	EXPECT_EQ("FizzAndTouchHead", ptrFizzBuzzHandler->handle(3));
 	EXPECT_EQ("FizzAndTouchHead", ptrFizzBuzzHandler->handle(51));
 	EXPECT_EQ("FizzAndTouchHead", ptrFizzBuzzHandler->handle(99));
