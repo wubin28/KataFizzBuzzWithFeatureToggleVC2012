@@ -8,6 +8,11 @@ FizzBuzzHandler::FizzBuzzHandler(BodyMovement *ptrBodyMovement) {
     this->ptrBodyMovement = ptrBodyMovement;
 }
 
+FizzBuzzHandler::~FizzBuzzHandler(void) {
+    delete this->ptrBodyMovement;
+    this->ptrBodyMovement = NULL;
+}
+
 string BodyMovementOff::respond(int number) {
     if (number % 3 == 0) {
         return "Fizz";

@@ -23,6 +23,7 @@ public:
 class FizzBuzzHandler {
 public:
     FizzBuzzHandler(BodyMovement *ptrBodyMovement);
+    ~FizzBuzzHandler(void);
 	string handle(int number);
 private:
     bool isBodyMovementFeatureOn;
