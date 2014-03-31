@@ -24,8 +24,6 @@ class FizzBuzzHandler {
 public:
     FizzBuzzHandler(BodyMovement *ptrBodyMovement);
 	string handle(int number);
-    void turnBodyMovementFeatureOn();
-    void turnBodyMovementFeatureOff();
 private:
     bool isBodyMovementFeatureOn;
     BodyMovement *ptrBodyMovement;

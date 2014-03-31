@@ -4,14 +4,6 @@ string FizzBuzzHandler::handle(int number) {
     return ptrBodyMovement->respond(number);
 }
 
-void FizzBuzzHandler::turnBodyMovementFeatureOn() {
-    isBodyMovementFeatureOn = 1;
-}
-
-void FizzBuzzHandler::turnBodyMovementFeatureOff() {
-    isBodyMovementFeatureOn = 0;
-}
-
 FizzBuzzHandler::FizzBuzzHandler(BodyMovement *ptrBodyMovement) {
     this->ptrBodyMovement = ptrBodyMovement;
 }
