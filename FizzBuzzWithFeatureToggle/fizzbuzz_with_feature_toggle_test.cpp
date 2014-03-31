@@ -32,18 +32,21 @@ protected:
 	// Objects declared here can be used by all tests in the test case for FizzBuzzWithFeatureToggle.
 };
 
-TEST_F(FizzBuzzWithFeatureToggleTest, WhenCommonNumberThenSayItDirectly) {
+TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOffWhenCommonNumberThenSayItDirectly) {
     FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOff);
-	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
-	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
-	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
-    ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
 	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
 	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
 	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
 }
 
-TEST_F(FizzBuzzWithFeatureToggleTest, WhenMultipleOf3ThenFizz) {
+TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOnWhenCommonNumberThenSayItDirectly) {
+    FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOn);
+	EXPECT_EQ("1", ptrFizzBuzzHandler->handle(1));
+	EXPECT_EQ("49", ptrFizzBuzzHandler->handle(49));
+	EXPECT_EQ("98", ptrFizzBuzzHandler->handle(98));
+}
+
+TEST_F(FizzBuzzWithFeatureToggleTest, GivenBodyMovementFeatureToggleIsOffWhenMultipleOf3ThenFizz) {
     FizzBuzzHandler *ptrFizzBuzzHandler = new FizzBuzzHandler(new BodyMovementOff);
 	EXPECT_EQ("Fizz", ptrFizzBuzzHandler->handle(3));
 	EXPECT_EQ("Fizz", ptrFizzBuzzHandler->handle(51));
